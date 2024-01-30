@@ -5,7 +5,7 @@ method used by a scikit-learn classifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.datasets import load_iris as load_data
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+import imiplot as skplt
 
 X, y = load_data(return_X_y=True)
 rf = RandomForestClassifier()

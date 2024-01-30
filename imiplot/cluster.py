@@ -1,5 +1,5 @@
 """
-The :mod:`scikitplot.cluster` module includes plots built specifically for
+The :mod:`imiplot.cluster` module includes plots built specifically for
 scikit-learn clusterer instances e.g. KMeans. You can use your own clusterers,
 but these plots assume specific properties shared by scikit-learn estimators.
 The specific requirements are documented per function.
@@ -62,7 +62,7 @@ def plot_elbow_curve(clf, X, title='Elbow Plot', cluster_ranges=None, n_jobs=1,
             drawn.
 
     Example:
-        >>> import scikitplot as skplt
+        >>> import imiplot as iplt
         >>> kmeans = KMeans(random_state=1)
         >>> skplt.cluster.plot_elbow_curve(kmeans, cluster_ranges=range(1, 30))
         <matplotlib.axes._subplots.AxesSubplot object at 0x7fe967d64490>

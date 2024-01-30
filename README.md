@@ -40,7 +40,7 @@ predicted_probas = nb.predict_proba(X_test)
 
 # The magic happens here
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+import imiplot as iplt
 skplt.metrics.plot_roc(y_test, predicted_probas)
 plt.show()
 ```
@@ -61,7 +61,7 @@ Here's a quick example to generate the precision-recall curves of a Keras classi
 ```python
 # Import what's needed for the Functions API
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+import imiplot as iplt
 
 # This is a Keras classifier. We'll generate probabilities on the test set.
 keras_clf.fit(X_train, y_train, batch_size=64, nb_epoch=10, verbose=2)

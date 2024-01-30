@@ -6,7 +6,7 @@ import types
 
 from sklearn.utils import deprecated
 
-from scikitplot.plotters import plot_silhouette, plot_elbow_curve
+from imiplot.plotters import plot_silhouette, plot_elbow_curve
 
 
 @deprecated('This will be removed in v0.4.0. The Factory '

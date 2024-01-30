@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import unittest
-import scikitplot.plotters as skplt
+import imiplot.plotters as skplt
 from sklearn.datasets import load_iris as load_data
 from sklearn.decomposition import PCA
 import numpy as np

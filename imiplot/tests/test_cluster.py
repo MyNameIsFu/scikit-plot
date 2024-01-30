@@ -5,7 +5,7 @@ from sklearn.datasets import load_iris as load_data
 from sklearn.cluster import KMeans
 import matplotlib.pyplot as plt
 
-from scikitplot.cluster import plot_elbow_curve
+from imiplot.cluster import plot_elbow_curve
 
 
 class TestPlotElbow(unittest.TestCase):

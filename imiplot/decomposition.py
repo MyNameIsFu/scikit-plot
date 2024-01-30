@@ -1,5 +1,5 @@
 """
-The :mod:`scikitplot.decomposition` module includes plots built specifically
+The :mod:`imiplot.decomposition` module includes plots built specifically
 for scikit-learn estimators that are used for dimensionality reduction
 e.g. PCA. You can use your own estimators, but these plots assume specific
 properties shared by scikit-learn estimators. The specific requirements are
@@ -47,7 +47,7 @@ def plot_pca_component_variance(clf, title='PCA Component Explained Variances',
             drawn.
 
     Example:
-        >>> import scikitplot as skplt
+        >>> import imiplot as iplt
         >>> pca = PCA(random_state=1)
         >>> pca.fit(X)
         >>> skplt.decomposition.plot_pca_component_variance(pca)
@@ -147,7 +147,7 @@ def plot_pca_2d_projection(clf, X, y, title='PCA 2-D Projection',
             drawn.
 
     Example:
-        >>> import scikitplot as skplt
+        >>> import imiplot as iplt
         >>> pca = PCA(random_state=1)
         >>> pca.fit(X)
         >>> skplt.decomposition.plot_pca_2d_projection(pca, X, y)

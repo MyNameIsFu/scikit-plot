@@ -7,8 +7,8 @@ from sklearn.decomposition import PCA
 import numpy as np
 import matplotlib.pyplot as plt
 
-from scikitplot.decomposition import plot_pca_component_variance
-from scikitplot.decomposition import plot_pca_2d_projection
+from imiplot.decomposition import plot_pca_component_variance
+from imiplot.decomposition import plot_pca_2d_projection
 
 
 class TestPlotPCAComponentVariance(unittest.TestCase):

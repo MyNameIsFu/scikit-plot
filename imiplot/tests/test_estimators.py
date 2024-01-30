@@ -6,8 +6,8 @@ from sklearn.ensemble import RandomForestClassifier
 import numpy as np
 import matplotlib.pyplot as plt
 
-from scikitplot.estimators import plot_feature_importances
-from scikitplot.estimators import plot_learning_curve
+from imiplot.estimators import plot_feature_importances
+from imiplot.estimators import plot_learning_curve
 
 
 def convert_labels_into_string(y_true):

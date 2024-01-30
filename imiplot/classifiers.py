@@ -10,9 +10,9 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.base import clone
 from sklearn.utils import deprecated
 
-from scikitplot import plotters
-from scikitplot.plotters import plot_feature_importances
-from scikitplot.plotters import plot_learning_curve
+from imiplot import plotters
+from imiplot.plotters import plot_feature_importances
+from imiplot.plotters import plot_learning_curve
 
 
 @deprecated('This will be removed in v0.4.0. The Factory '

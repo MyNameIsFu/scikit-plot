@@ -4,7 +4,7 @@ method used by a scikit-learn clusterer
 """
 from __future__ import absolute_import
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+import imiplot as skplt
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_iris as load_data
 

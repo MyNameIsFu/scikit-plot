@@ -4,7 +4,7 @@
 Factory API Reference
 =====================
 
-This document contains the plotting methods that are embedded into scikit-learn objects by the factory functions :func:`~scikitplot.clustering_factory`  and :func:`~scikitplot.classifier_factory`.
+This document contains the plotting methods that are embedded into scikit-learn objects by the factory functions :func:`~imiplot.clustering_factory`  and :func:`~imiplot.classifier_factory`.
 
 .. admonition:: Important Note
 
@@ -13,15 +13,15 @@ This document contains the plotting methods that are embedded into scikit-learn 
 Classifier Plots
 ----------------
 
-.. autofunction:: scikitplot.classifier_factory
+.. autofunction:: imiplot.classifier_factory
 
-.. automodule:: scikitplot.classifiers
+.. automodule:: imiplot.classifiers
    :members: plot_learning_curve, plot_confusion_matrix_with_cv, plot_roc_curve_with_cv, plot_ks_statistic_with_cv, plot_precision_recall_curve_with_cv, plot_feature_importances
 
 Clustering Plots
 ----------------
 
-.. autofunction:: scikitplot.clustering_factory
+.. autofunction:: imiplot.clustering_factory
 
-.. automodule:: scikitplot.clustering
+.. automodule:: imiplot.clustering
    :members: plot_silhouette, plot_elbow_curve

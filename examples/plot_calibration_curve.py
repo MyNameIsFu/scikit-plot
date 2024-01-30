@@ -8,7 +8,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.svm import LinearSVC
 from sklearn.datasets import make_classification
 import matplotlib.pyplot as plt
-import scikitplot as skplt
+import imiplot as skplt
 
 X, y = make_classification(n_samples=100000, n_features=20,
                            n_informative=2, n_redundant=2,

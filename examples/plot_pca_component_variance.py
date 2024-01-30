@@ -4,7 +4,7 @@ method used by a scikit-learn PCA object
 """
 from sklearn.decomposition import PCA
 from sklearn.datasets import load_digits as load_data
-import scikitplot as skplt
+import imiplot as skplt
 import matplotlib.pyplot as plt
 
 

@@ -34,11 +34,11 @@ class PyTest(TestCommand):
         sys.exit(errcode)
 
 setup(
-    name='scikit-plot',
-    version='0.3.7',
-    url='https://github.com/reiinakano/scikit-plot',
+    name='imi-plot',
+    version='0.0.1',
+    url='https://github.com/MyNameIsFu/scikit-plot',
     license='MIT License',
-    author='Reiichiro Nakano',
+    author='Michael Fujarski',
     tests_require=['pytest'],
     install_requires=[
         'matplotlib>=1.4.0',
@@ -47,20 +47,17 @@ setup(
         'joblib>=0.10'
     ],
     cmdclass={'test': PyTest},
-    author_email='reiichiro.s.nakano@gmail.com',
-    description='An intuitive library to add plotting functionality to scikit-learn objects.',
+    author_email='michael.fujarski@uni-muenster.de',
+    description='Fork of the scikit-plot library. Adapted for medical research questions. Original author: Reiichiro Nakano. An intuitive library to add plotting functionality to scikit-learn objects. Original URL: https://github.com/reiinakano/scikit-plot',
     long_description=long_description,
-    packages=['scikitplot'],
+    packages=['imiplot'],
     include_package_data=True,
     platforms='any',
-    test_suite='scikitplot.tests.test_scikitplot',
+    test_suite='imiplot.tests.test_scikitplot',
     classifiers = [
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.10',
         'Natural Language :: English',
         'Intended Audience :: Developers',
         'Intended Audience :: Science/Research',

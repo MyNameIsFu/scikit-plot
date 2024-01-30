@@ -1,5 +1,5 @@
 """
-The :mod:`scikitplot.estimators` module includes plots built specifically for
+The :mod:`imiplot.estimators` module includes plots built specifically for
 scikit-learn estimator (classifier/regressor) instances e.g. Random Forest.
 You can use your own estimators, but these plots assume specific properties
 shared by scikit-learn estimators. The specific requirements are documented per
@@ -63,7 +63,7 @@ def plot_feature_importances(clf, title='Feature Importance',
             drawn.
 
     Example:
-        >>> import scikitplot as skplt
+        >>> import imiplot as iplt
         >>> rf = RandomForestClassifier()
         >>> rf.fit(X, y)
         >>> skplt.estimators.plot_feature_importances(
@@ -206,7 +206,7 @@ def plot_learning_curve(clf, X, y, title='Learning Curve', cv=None,
             drawn.
 
     Example:
-        >>> import scikitplot as skplt
+        >>> import imiplot as iplt
         >>> rf = RandomForestClassifier()
         >>> skplt.estimators.plot_learning_curve(rf, X, y)
         <matplotlib.axes._subplots.AxesSubplot object at 0x7fe967d64490>

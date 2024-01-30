@@ -4,5 +4,5 @@
 Clusterer Module (API Reference)
 ================================
 
-.. automodule:: scikitplot.cluster
+.. automodule:: imiplot.cluster
    :members: plot_elbow_curve

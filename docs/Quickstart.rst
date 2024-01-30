@@ -53,9 +53,9 @@ Let's use :func:`sklearn.model_selection.cross_val_predict` to generate predicte
 
 For those not familiar with what :func:`cross_val_predict` does, it generates cross-validated estimates for each sample point in our dataset. Comparing the cross-validated estimates with the true labels, we'll be able to get evaluation metrics such as accuracy, precision, recall, and in our case, the confusion matrix.
 
-To plot and show our confusion matrix, we'll use the function :func:`~scikitplot.metrics.plot_confusion_matrix`, passing it both the true labels and predicted labels. We'll also set the optional argument ``normalize=True`` so the values displayed in our confusion matrix plot will be from the range [0, 1]. Finally, to show our plot, we'll call ``plt.show()``.
+To plot and show our confusion matrix, we'll use the function :func:`~imiplot.metrics.plot_confusion_matrix`, passing it both the true labels and predicted labels. We'll also set the optional argument ``normalize=True`` so the values displayed in our confusion matrix plot will be from the range [0, 1]. Finally, to show our plot, we'll call ``plt.show()``.
 
-    >>> import scikitplot as skplt
+    >>> import imiplot as iplt
     >>> skplt.metrics.plot_confusion_matrix(y, predictions, normalize=True)
     <matplotlib.axes._subplots.AxesSubplot object at 0x7fe967d64490>
     >>> plt.show()
@@ -75,7 +75,7 @@ Here's a quick example to generate the precision-recall curves of a Keras classi
 
     >>> # Import what's needed for the Functions API
     >>> import matplotlib.pyplot as plt
-    >>> import scikitplot as skplt
+    >>> import imiplot as iplt
     >>> # This is a Keras classifier. We'll generate probabilities on the test set.
     >>> keras_clf.fit(X_train, y_train, batch_size=64, nb_epoch=10, verbose=2)
     >>> probas = keras_clf.predict_proba(X_test, batch_size=64)
@@ -88,7 +88,7 @@ Here's a quick example to generate the precision-recall curves of a Keras classi
    :align: center
    :alt: Precision Recall Curves
 
-And again, that's it! As in the example above, all we needed to do was pass the ground truth labels and predicted probabilities to :func:`~scikitplot.metrics.plot_precision_recall_curve` to generate the precision-recall curves. This means you can use literally any classifier you want to generate the precision-recall curves, from Keras classifiers to NLTK Naive Bayes to XGBoost, as long as you pass in the predicted probabilities in the correct format.
+And again, that's it! As in the example above, all we needed to do was pass the ground truth labels and predicted probabilities to :func:`~imiplot.metrics.plot_precision_recall_curve` to generate the precision-recall curves. This means you can use literally any classifier you want to generate the precision-recall curves, from Keras classifiers to NLTK Naive Bayes to XGBoost, as long as you pass in the predicted probabilities in the correct format.
 
 Now what?
 ---------

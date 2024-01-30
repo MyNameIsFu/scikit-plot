@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import matplotlib.pyplot as plt
 from sklearn.naive_bayes import GaussianNB
 from sklearn.datasets import load_digits as load_data
-import scikitplot as skplt
+import imiplot as skplt
 
 
 X, y = load_data(return_X_y=True)

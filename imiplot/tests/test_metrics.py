@@ -11,16 +11,16 @@ from sklearn.cluster import KMeans
 import numpy as np
 import matplotlib.pyplot as plt
 
-from scikitplot.metrics import plot_confusion_matrix
-from scikitplot.metrics import plot_roc_curve
-from scikitplot.metrics import plot_roc
-from scikitplot.metrics import plot_ks_statistic
-from scikitplot.metrics import plot_precision_recall_curve
-from scikitplot.metrics import plot_precision_recall
-from scikitplot.metrics import plot_silhouette
-from scikitplot.metrics import plot_calibration_curve
-from scikitplot.metrics import plot_cumulative_gain
-from scikitplot.metrics import plot_lift_curve
+from imiplot.metrics import plot_confusion_matrix
+from imiplot.metrics import plot_roc_curve
+from imiplot.metrics import plot_roc
+from imiplot.metrics import plot_ks_statistic
+from imiplot.metrics import plot_precision_recall_curve
+from imiplot.metrics import plot_precision_recall
+from imiplot.metrics import plot_silhouette
+from imiplot.metrics import plot_calibration_curve
+from imiplot.metrics import plot_cumulative_gain
+from imiplot.metrics import plot_lift_curve
 
 
 def convert_labels_into_string(y_true):

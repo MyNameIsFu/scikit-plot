@@ -1,6 +1,6 @@
 from __future__ import absolute_import
 import unittest
-import scikitplot
+import imiplot
 import warnings
 import numpy as np
 from sklearn.datasets import load_iris as load_data
@@ -31,21 +31,21 @@ class TestClassifierFactory(unittest.TestCase):
     def test_instance_validation(self):
 
         clf = self.Clusterer()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
 
         not_clf = self.NotClusterer()
-        self.assertRaises(TypeError, scikitplot.clustering_factory, not_clf)
+        self.assertRaises(TypeError, imiplot.clustering_factory, not_clf)
 
     def test_method_insertion(self):
 
         clf = self.Clusterer()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         assert hasattr(clf, 'plot_silhouette')
         assert hasattr(clf, 'plot_elbow_curve')
 
         with warnings.catch_warnings(record=True) as w:
             warnings.simplefilter('always')
-            scikitplot.clustering_factory(clf)
+            imiplot.clustering_factory(clf)
 
             assert len(w) >= 2
             for warning in w[1:]:
@@ -68,7 +68,7 @@ class TestPlotSilhouette(unittest.TestCase):
     def test_copy(self):
         np.random.seed(0)
         clf = KMeans()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         ax = clf.plot_silhouette(self.X)
         assert not hasattr(clf, "cluster_centers_")
         ax = clf.plot_silhouette(self.X, copy=False)
@@ -77,14 +77,14 @@ class TestPlotSilhouette(unittest.TestCase):
     def test_cmap(self):
         np.random.seed(0)
         clf = KMeans()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         ax = clf.plot_silhouette(self.X, cmap='Spectral')
         ax = clf.plot_silhouette(self.X, cmap=plt.cm.Spectral)
 
     def test_ax(self):
         np.random.seed(0)
         clf = KMeans()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         fig, ax = plt.subplots(1, 1)
         out_ax = clf.plot_silhouette(self.X)
         assert ax is not out_ax
@@ -116,20 +116,20 @@ class TestPlotElbow(unittest.TestCase):
                 pass
 
         clf = DummyClusterer()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         self.assertRaises(TypeError, clf.plot_elbow_curve, self.X)
 
     def test_cluster_ranges(self):
         np.random.seed(0)
         clf = KMeans()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         ax = clf.plot_elbow_curve(self.X, cluster_ranges=range(1, 10))
         ax = clf.plot_elbow_curve(self.X)
 
     def test_ax(self):
         np.random.seed(0)
         clf = KMeans()
-        scikitplot.clustering_factory(clf)
+        imiplot.clustering_factory(clf)
         fig, ax = plt.subplots(1, 1)
         out_ax = clf.plot_elbow_curve(self.X)
         assert ax is not out_ax

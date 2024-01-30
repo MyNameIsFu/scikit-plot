@@ -6,7 +6,7 @@ from __future__ import absolute_import
 import matplotlib.pyplot as plt
 from sklearn.cluster import KMeans
 from sklearn.datasets import load_iris as load_data
-import scikitplot as skplt
+import imiplot as skplt
 
 X, y = load_data(return_X_y=True)
 kmeans = KMeans(n_clusters=4, random_state=1)
