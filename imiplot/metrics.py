@@ -332,7 +332,7 @@ def plot_roc_curve(y_true, y_probas, title='ROC Curves',
 def plot_roc(y_true, y_probas, title='ROC Curves',
                    plot_micro=True, plot_macro=True, classes_to_plot=None,
                    ax=None, figsize=None, cmap='nipy_spectral', color=None,
-                   title_fontsize="large", text_fontsize="medium"):
+                   title_fontsize="large", text_fontsize="medium", prefix="ROC curve of class"):
     """Generates the ROC curves from labels and predicted scores/probabilities
 
     Args:
@@ -428,8 +428,7 @@ def plot_roc(y_true, y_probas, title='ROC Curves',
             else:
                 c = None
             ax.plot(fpr_dict[i], tpr_dict[i], lw=2, color=c,
-                    label='ROC curve of class {0} (area = {1:0.2f})'
-                          ''.format(classes[i], roc_auc))
+                    label=f'{prefix} {classes[i]} (area = {roc_auc:0.2f})')
 
     if plot_micro:
         binarized_y_true = label_binarize(y_true, classes=classes)
