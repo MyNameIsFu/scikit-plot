@@ -331,12 +331,12 @@ def plot_roc_curve(y_true, y_probas, title='ROC Curves',
 
 def plot_roc(y_true, y_probas, title='ROC Curves',
                    plot_micro=True, plot_macro=True, classes_to_plot=None,
-                   ax=None, figsize=None, cmap='nipy_spectral',
+                   ax=None, figsize=None, cmap='nipy_spectral', color=None,
                    title_fontsize="large", text_fontsize="medium"):
     """Generates the ROC curves from labels and predicted scores/probabilities
 
     Args:
-        y_true (array-like, shape (n_samples)):
+        y_true (array-like, shape (n_samples) containing eg. [0, 1, 0, "car", ...] OR (n_samples, m_classes) containing 0/1 entries only):
             Ground truth (correct) target values.
 
         y_probas (array-like, shape (n_samples, n_classes)):
@@ -362,11 +362,14 @@ def plot_roc(y_true, y_probas, title='ROC Curves',
         figsize (2-tuple, optional): Tuple denoting figure size of the plot
             e.g. (6, 6). Defaults to ``None``.
 
-        cmap (string or :class:`matplotlib.colors.Colormap` instance, optional):
-            Colormap used for plotting the projection. View Matplotlib Colormap
-            documentation for available options.
+        cmap (string or :class:`matplotlib.colors.Colormap` instance or callable, optional):
+            Colormap used for plotting the projection. This can be any callable of 
+            View Matplotlib Colormap documentation for available predefined options.
             https://matplotlib.org/users/colormaps.html
 
+        color (string or None):
+            Explicit color that is used for the plot. Higher precedence than cmap.
+            
         title_fontsize (string or int, optional): Matplotlib-style fontsizes.
             Use e.g. "small", "medium", "large" or integer-values. Defaults to
             "large".
@@ -404,6 +407,9 @@ def plot_roc(y_true, y_probas, title='ROC Curves',
     if ax is None:
         fig, ax = plt.subplots(1, 1, figsize=figsize)
 
+    if isinstance(cmap, str):
+        cmap = plt.cm.get_cmap(cmap)
+
     ax.set_title(title, fontsize=title_fontsize)
 
     fpr_dict = dict()
@@ -415,8 +421,13 @@ def plot_roc(y_true, y_probas, title='ROC Curves',
                                                 pos_label=classes[i])
         if to_plot:
             roc_auc = auc(fpr_dict[i], tpr_dict[i])
-            color = plt.cm.get_cmap(cmap)(float(i) / len(classes))
-            ax.plot(fpr_dict[i], tpr_dict[i], lw=2, color=color,
+            if color is not None:
+                c = color
+            elif cmap is not None:
+                c = plt.cm.get_cmap(cmap)(float(i) / len(classes))
+            else:
+                c = None
+            ax.plot(fpr_dict[i], tpr_dict[i], lw=2, color=c,
                     label='ROC curve of class {0} (area = {1:0.2f})'
                           ''.format(classes[i], roc_auc))
 
